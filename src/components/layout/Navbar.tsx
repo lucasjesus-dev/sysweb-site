@@ -23,9 +23,6 @@ export const Navbar = () => {
               <a href="#about" className="text-white/80 hover:text-white">
                 Sobre
               </a>
-              <a href="#portfolio" className="text-white/80 hover:text-white">
-                Portfólio
-              </a>
               <a href="#contact" className="btn-primary">
                 Contato
               </a>
@@ -60,13 +57,6 @@ export const Navbar = () => {
                 onClick={() => setIsOpen(false)}
               >
                 Sobre
-              </a>
-              <a
-                href="#portfolio"
-                className="block px-3 py-2 text-white/80 hover:text-white"
-                onClick={() => setIsOpen(false)}
-              >
-                Portfólio
               </a>
               <a
                 href="#contact"

@@ -1,3 +1,5 @@
+import { Mail, Phone } from "lucide-react";
+
 export const Footer = () => {
   return (
     <footer className="py-12 bg-white/5">
@@ -23,11 +25,6 @@ export const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#portfolio" className="text-secondary hover:text-white">
-                  Portfólio
-                </a>
-              </li>
-              <li>
                 <a href="#contact" className="text-secondary hover:text-white">
                   Contato
                 </a>
@@ -37,9 +34,20 @@ export const Footer = () => {
           <div>
             <h3 className="mb-4 text-xl font-bold">Contato</h3>
             <ul className="space-y-2 text-secondary">
-              <li>contato@syswebtecnologia.com.br</li>
-              <li>(00) 0000-0000</li>
-              <li>Rua Exemplo, 123 - Cidade, Estado</li>
+              <li className="flex items-center gap-2">
+                <Mail size={16} />
+                <a href="mailto:lucasjesus.dev@protonmail.com" className="hover:text-white">
+                  lucasjesus.dev@protonmail.com
+                </a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Phone size={16} />
+                <a href="https://wa.me/5551999152979" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                  (51) 9 99152-2979
+                </a>
+              </li>
+              <li>Rua Flórida 504, Jardim Betânia</li>
+              <li>Cachoeirinha, RS</li>
             </ul>
           </div>
         </div>

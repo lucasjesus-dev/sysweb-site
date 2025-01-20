@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 
 export const Hero = () => {
   return (
-    <div className="relative min-h-screen pt-32 pb-20 overflow-hidden">
+    <div className="relative pt-32 pb-16 overflow-hidden"> {/* Reduzido o min-h-screen e ajustado padding */}
       <div className="container relative z-10">
         <div className="max-w-3xl animate-fade-in">
           <h1 className="mb-6 text-5xl font-bold leading-tight text-white sm:text-6xl">
