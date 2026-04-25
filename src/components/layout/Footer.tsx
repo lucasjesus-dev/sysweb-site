@@ -1,12 +1,13 @@
-import { Mail, Phone } from "lucide-react";
+import { Mail, MessageSquare } from "lucide-react";
+import logo from "@/assets/logo-sysweb.png";
 
 export const Footer = () => {
   return (
-    <footer className="py-12 bg-white/5">
+    <footer className="py-12 bg-white/5 border-t border-accent/10">
       <div className="container">
         <div className="grid gap-8 md:grid-cols-3">
           <div>
-            <h3 className="mb-4 text-xl font-bold">Sysweb Tecnologia</h3>
+            <img src={logo} alt="Sysweb Tecnologia" className="h-14 w-auto mb-4" />
             <p className="text-secondary">
               Transformando ideias em soluções digitais inovadoras.
             </p>
@@ -41,7 +42,7 @@ export const Footer = () => {
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <Phone size={16} />
+                <MessageSquare size={16} />
                 <a href="https://wa.me/5551999152979" target="_blank" rel="noopener noreferrer" className="hover:text-white">
                   (51) 9 99152-2979
                 </a>
