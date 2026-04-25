@@ -96,12 +96,12 @@ export const Contact = () => {
               <div>
                 <h3 className="mb-1 text-lg font-semibold">WhatsApp</h3>
                 <a 
-                  href="https://wa.me/5551999152979"
+                  href="https://wa.me/55519991806772"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-secondary hover:text-white transition-colors"
                 >
-                  (51) 9 99152-2979
+                  (51) 9 99180-6772
                 </a>
               </div>
             </div>
