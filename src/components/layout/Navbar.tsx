@@ -8,10 +8,10 @@ export const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-sm border-b border-accent/20">
       <div className="container">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24">
           <div className="flex items-center">
             <a href="#" className="flex items-center">
-              <img src={logo} alt="Sysweb Tecnologia" className="h-12 w-auto" />
+              <img src={logo} alt="Sysweb Tecnologia" className="h-20 w-auto" />
             </a>
           </div>
 
