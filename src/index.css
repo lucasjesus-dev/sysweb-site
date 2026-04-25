@@ -5,6 +5,20 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  #root {
+    @apply w-full min-h-screen max-w-none m-0 p-0;
+  }
+
   body {
     @apply bg-primary text-white;
   }

@@ -7,9 +7,11 @@ export const Footer = () => {
       <div className="container">
         <div className="grid gap-8 md:grid-cols-3">
           <div>
-            <img src={logo} alt="Sysweb Tecnologia" className="h-20 w-auto mb-4" />
+            <a href="#home" className="inline-block">
+              <img src={logo} alt="Sysweb Tecnologia" className="mb-4 h-20 w-auto" />
+            </a>
             <p className="text-secondary">
-              Transformando ideias em soluções digitais inovadoras.
+              Software sob medida, integrações e automações para acelerar resultados.
             </p>
           </div>
           <div>
@@ -18,6 +20,11 @@ export const Footer = () => {
               <li>
                 <a href="#services" className="text-secondary hover:text-white">
                   Serviços
+                </a>
+              </li>
+              <li>
+                <a href="#process" className="text-secondary hover:text-white">
+                  Processo
                 </a>
               </li>
               <li>

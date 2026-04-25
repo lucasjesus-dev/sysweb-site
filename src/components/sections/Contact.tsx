@@ -1,9 +1,27 @@
 import { Mail, MessageSquare } from "lucide-react";
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import { useToast } from "@/components/ui/use-toast";
+import { sectionHeader } from "@/lib/motion-variants";
 
 export const Contact = () => {
   const { toast } = useToast();
+  const reduce = useReducedMotion();
+  const headerV = useMemo(
+    () =>
+      reduce
+        ? { hidden: { opacity: 1, y: 0 }, visible: { opacity: 1, y: 0 } }
+        : sectionHeader,
+    [reduce]
+  );
+  const formV = useMemo(
+    () =>
+      reduce
+        ? { hidden: { opacity: 1, y: 0 }, visible: { opacity: 1, y: 0 } }
+        : { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { delay: 0.1, duration: 0.45 } } },
+    [reduce]
+  );
+
   const [formData, setFormData] = useState({
     nome: "",
     email: "",
@@ -12,39 +30,54 @@ export const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Construir o corpo do email
+
     const mailtoLink = `mailto:lucasjesus.dev@protonmail.com?subject=Contato via Site - ${formData.nome}&body=Nome: ${formData.nome}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AMensagem:%0D%0A${formData.mensagem}`;
-    
-    // Abrir o cliente de email padrão
+
     window.location.href = mailtoLink;
-    
-    // Mostrar toast de sucesso
+
     toast({
       title: "Mensagem enviada!",
       description: "Em breve entraremos em contato.",
     });
-    
-    // Limpar formulário
+
     setFormData({ nome: "", email: "", mensagem: "" });
   };
 
   return (
-    <section id="contact" className="py-20 bg-white/5">
+    <section id="contact" className="bg-white/5 py-20">
       <div className="container">
-        <h2 className="section-title text-center">Entre em Contato</h2>
-        <p className="section-subtitle text-center">
-          Vamos conversar sobre seu projeto
-        </p>
+        <motion.h2
+          className="section-title text-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
+          variants={headerV}
+        >
+          Entre em Contato
+        </motion.h2>
+        <motion.p
+          className="section-subtitle text-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
+          variants={headerV}
+        >
+          Conte o que você quer automatizar ou construir
+        </motion.p>
 
-        <div className="grid gap-12 mt-12 lg:grid-cols-2">
-          <div>
+        <div className="mt-12 grid gap-12 lg:grid-cols-2">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={formV}
+          >
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
-                <label className="block mb-2 text-sm font-medium">Nome</label>
+                <label className="mb-2 block text-sm font-medium">Nome</label>
                 <input
                   type="text"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-accent"
+                  className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 focus:border-accent focus:outline-none"
                   placeholder="Seu nome"
                   value={formData.nome}
                   onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
@@ -52,10 +85,10 @@ export const Contact = () => {
                 />
               </div>
               <div>
-                <label className="block mb-2 text-sm font-medium">Email</label>
+                <label className="mb-2 block text-sm font-medium">Email</label>
                 <input
                   type="email"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-accent"
+                  className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 focus:border-accent focus:outline-none"
                   placeholder="seu@email.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -63,43 +96,49 @@ export const Contact = () => {
                 />
               </div>
               <div>
-                <label className="block mb-2 text-sm font-medium">Mensagem</label>
+                <label className="mb-2 block text-sm font-medium">Mensagem</label>
                 <textarea
-                  className="w-full h-32 px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-accent"
-                  placeholder="Descreva seu projeto"
+                  className="h-32 w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 focus:border-accent focus:outline-none"
+                  placeholder="Ex.: Preciso de um ERP/CRM sob medida, integrações entre sistemas, automação de tarefas, site/landing page ou e-commerce."
                   value={formData.mensagem}
                   onChange={(e) => setFormData({ ...formData, mensagem: e.target.value })}
                   required
-                ></textarea>
+                />
               </div>
               <button type="submit" className="w-full btn-primary">
                 Enviar Mensagem
               </button>
             </form>
-          </div>
+          </motion.div>
 
-          <div className="space-y-8">
+          <motion.div
+            className="space-y-8"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={formV}
+          >
             <div className="flex items-start gap-4">
-              <Mail className="flex-shrink-0 w-6 h-6 text-accent" />
+              <Mail className="h-6 w-6 flex-shrink-0 text-accent" />
               <div>
                 <h3 className="mb-1 text-lg font-semibold">E-mail</h3>
-                <a 
+                <a
                   href="mailto:lucasjesus.dev@protonmail.com"
-                  className="text-secondary hover:text-white transition-colors"
+                  className="text-secondary transition-colors hover:text-white"
                 >
                   lucasjesus.dev@protonmail.com
                 </a>
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <MessageSquare className="flex-shrink-0 w-6 h-6 text-accent" />
+              <MessageSquare className="h-6 w-6 flex-shrink-0 text-accent" />
               <div>
                 <h3 className="mb-1 text-lg font-semibold">WhatsApp</h3>
-                <a 
+                <a
                   href="https://wa.me/55519991806772"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-secondary hover:text-white transition-colors"
+                  className="text-secondary transition-colors hover:text-white"
                 >
                   (51) 9 99180-6772
                 </a>
@@ -108,11 +147,12 @@ export const Contact = () => {
             <div className="space-y-2">
               <h3 className="text-lg font-semibold">Endereço</h3>
               <p className="text-secondary">
-                Rua Flórida 504, Jardim Betânia<br />
+                Rua Flórida 504, Jardim Betânia
+                <br />
                 Cachoeirinha, RS
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

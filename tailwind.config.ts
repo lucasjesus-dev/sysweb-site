@@ -48,6 +48,8 @@ export default {
         "slide-in": "slide-in 0.5s ease-out",
         "float": "float 6s ease-in-out infinite",
         "glow": "glow 3s ease-in-out infinite",
+        /** Pulo leve (ex.: botão flutuante) — mais lento que `animate-bounce` do Tailwind */
+        "bounce-slow": "bounce-slow 2.4s ease-in-out infinite",
       },
       keyframes: {
         "fade-in": {
@@ -65,6 +67,10 @@ export default {
         "glow": {
           "0%, 100%": { filter: "drop-shadow(0 0 20px rgba(168, 85, 247, 0.4))" },
           "50%": { filter: "drop-shadow(0 0 40px rgba(168, 85, 247, 0.7))" },
+        },
+        "bounce-slow": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-5px)" },
         },
       },
     },
