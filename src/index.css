@@ -40,4 +40,26 @@
   .section-subtitle {
     @apply mb-12 text-lg text-secondary;
   }
+
+  /* WhatsApp: o wrapper pula. Não adicionar `duration-*` do Tailwind aqui — no build, `.duration-300` vira
+     também `animation-duration: 300ms` e pode anular o ritmo do @keyframes. */
+  .whatsapp-bob {
+    animation: whatsapp-bob 6s ease-in-out infinite !important;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .whatsapp-bob {
+      animation: none !important;
+    }
+  }
+}
+
+@keyframes whatsapp-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }

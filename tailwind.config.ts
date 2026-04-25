@@ -49,7 +49,7 @@ export default {
         "float": "float 6s ease-in-out infinite",
         "glow": "glow 3s ease-in-out infinite",
         /** Pulo leve (ex.: botão flutuante) — mais lento que `animate-bounce` do Tailwind */
-        "bounce-slow": "bounce-slow 2.4s ease-in-out infinite",
+        "bounce-slow": "bounce-slow 4s ease-in-out infinite",
       },
       keyframes: {
         "fade-in": {
