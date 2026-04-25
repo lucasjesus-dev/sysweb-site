@@ -43,8 +43,8 @@ export const Footer = () => {
               </li>
               <li className="flex items-center gap-2">
                 <MessageSquare size={16} />
-                <a href="https://wa.me/5551999152979" target="_blank" rel="noopener noreferrer" className="hover:text-white">
-                  (51) 9 99152-2979
+                <a href="https://wa.me/55519991806772" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                  (51) 9 99180-6772
                 </a>
               </li>
               <li>Rua Flórida 504, Jardim Betânia</li>
