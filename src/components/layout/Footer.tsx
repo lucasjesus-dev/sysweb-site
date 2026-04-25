@@ -7,7 +7,7 @@ export const Footer = () => {
       <div className="container">
         <div className="grid gap-8 md:grid-cols-3">
           <div>
-            <img src={logo} alt="Sysweb Tecnologia" className="h-14 w-auto mb-4" />
+            <img src={logo} alt="Sysweb Tecnologia" className="h-20 w-auto mb-4" />
             <p className="text-secondary">
               Transformando ideias em soluções digitais inovadoras.
             </p>
